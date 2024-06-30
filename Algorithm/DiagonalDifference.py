@@ -58,8 +58,11 @@ import numpy as np
 
 def diagonalDifference(arr):
     # Write your code here
-    diagonal1 = arr.diagonal()
-    diagonal2 = np.fliplr(arr).diagonal()
+    diagonal1 = 0
+    diagonal2 = 0
+    for i in range(len(arr)):
+        diagonal1 += arr[i][i]
+        diagonal2 += arr[i][len(arr)-i-1]
     difference = abs(diagonal1-diagonal2)
     return difference
 
